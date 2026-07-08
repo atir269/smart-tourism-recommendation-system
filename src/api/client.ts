@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+const defaultApiUrl = import.meta.env.DEV
+  ? 'http://localhost:3001/api'
+  : 'https://smart-tourism-recommendation-system.onrender.com/api';
+
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || defaultApiUrl,
   timeout: 15000,
 });
 
